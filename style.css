@@ -211,6 +211,12 @@ section {
   color: var(--text-color);
 }
 
+/* Process Section */
+.process {
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+}
+
 .service-card {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
@@ -265,49 +271,9 @@ section {
 
 .project-card {
   margin-bottom: 30px;
-  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.project-img {
-  position: relative;
-  overflow: hidden;
-}
-
-.project-img img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: var(--transition);
-}
-
-.overlay-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(139, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.project-card:hover .overlay-hover {
-  opacity: 1;
-}
-
-.project-card:hover .project-img img {
-  transform: scale(1.1);
 }
 
 .project-info {
@@ -338,51 +304,120 @@ section {
   color: var(--text-color);
 }
 
-/* Process Section */
-.process {
-  background-color: var(--bg-dark);
-  color: var(--text-color);
-}
-
-.process-step {
-  text-align: center;
+/* Categorías de Productos */
+.category-card {
   position: relative;
-  padding: 2rem 1rem;
-  transition: var(--transition);
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  cursor: pointer;
 }
 
-.step-number {
+.category-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.category-overlay {
   position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 5rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.05);
-  line-height: 1;
-  z-index: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 20px;
+  color: var(--text-color);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-card:hover .category-overlay {
+  transform: translateY(0);
+}
+
+.category-overlay h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Extended Gallery Styles */
+.extended-gallery {
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  padding: 20px;
+  color: var(--text-color);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-overlay h5 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  font-weight: 600;
 }
 
 .step-icon {
-  position: relative;
   width: 70px;
   height: 70px;
-  background-color: var(--primary-color);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  z-index: 1;
   transition: var(--transition);
 }
 
 .step-icon i {
   font-size: 1.8rem;
-  color: var(--text-color);
+  color: var(--primary-color);
+  transition: var(--transition);
 }
 
 .process-step:hover .step-icon {
   transform: rotateY(180deg);
+  background-color: var(--primary-color);
+}
+
+.process-step:hover .step-icon i {
+  color: var(--text-color);
 }
 
 .process-step h4 {
