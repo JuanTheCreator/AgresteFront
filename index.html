@@ -859,5 +859,76 @@
       premiumShow(idx);
     }
   </script>
+
+  <!-- Modal de Proyecto -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="projectModalLabel">Título del Proyecto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <img id="projectModalImg" src="assets/AgresteTransparente.png" alt="Proyecto" class="img-fluid rounded mb-3"/>
+        <p id="projectModalDesc">Descripción del proyecto aquí.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Datos de ejemplo para los proyectos destacados
+  const projectData = [
+    {
+      title: 'Mesa de Centro',
+      img: 'assets/AgresteTransparente.png',
+      desc: 'Diseño minimalista con madera de roble.'
+    },
+    {
+      title: 'Estantería Modular',
+      img: 'assets/logo.png',
+      desc: 'Solución personalizada para espacios reducidos.'
+    },
+    {
+      title: 'Mobiliario Comercial',
+      img: 'assets/Agreste_logo_black.png',
+      desc: 'Diseño integral para tienda de ropa.'
+    }
+  ];
+
+  const projectModal = document.getElementById('projectModal');
+  const projectModalLabel = document.getElementById('projectModalLabel');
+  const projectModalImg = document.getElementById('projectModalImg');
+  const projectModalDesc = document.getElementById('projectModalDesc');
+
+  document.querySelectorAll('.btn-view').forEach((btn, idx) => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const data = projectData[idx] || projectData[0];
+      projectModalLabel.textContent = data.title;
+      projectModalImg.src = data.img;
+      projectModalDesc.textContent = data.desc;
+      const modal = new bootstrap.Modal(projectModal);
+      modal.show();
+    });
+  });
+
+  const verTodosBtn = document.querySelector('.btn.btn-custom.btn-lg');
+  if (verTodosBtn) {
+    verTodosBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      projectModalLabel.textContent = 'Todos los Proyectos';
+      projectModalImg.src = 'assets/Agreste_logo_white.png';
+      projectModalDesc.textContent = 'Aquí podrías mostrar una galería o listado de todos tus proyectos destacados.';
+      const modal = new bootstrap.Modal(projectModal);
+      modal.show();
+    });
+  }
+});
+</script>
 </body>
 </html>
