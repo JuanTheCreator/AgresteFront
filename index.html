@@ -195,55 +195,48 @@
         </div>
       </div>
       
-      <!-- Categorías de Productos -->
+      <!-- Categorías de Productos como slider sin scroll -->
       <div class="section-title text-center mt-5" data-aos="fade-up">
-        <h2>Categorías de Productos</h2>
+        <h3>Categorías Destacadas</h3>
         <div class="title-line mx-auto"></div>
-        <p class="lead">Explora nuestra variedad de creaciones</p>
       </div>
-      
-      <div class="row g-4 mt-3">
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
-          <div class="category-card">
-            <img src="assets/Agosto/AGOSTO/_A7_6040.jpg" alt="Mesas" class="img-fluid">
-            <div class="category-overlay">
-              <h4>Mesas</h4>
-              <p>Diseños únicos para cada espacio</p>
+      <div class="container mb-5">
+        <div class="position-relative">
+          <button id="catPrev" class="btn btn-custom position-absolute top-50 start-0 translate-middle-y" style="z-index:2;left:-20px;"><i class="fas fa-chevron-left"></i></button>
+          <div id="catSlider" class="d-flex gap-3 px-5" style="overflow:hidden;">
+            <div class="category-card flex-shrink-0" style="width:220px;">
+              <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-12.jpg" alt="Mesas" class="img-fluid">
+              <div class="category-overlay"><h4>Mesas</h4></div>
+            </div>
+            <div class="category-card flex-shrink-0" style="width:220px;">
+              <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-18.jpg" alt="Estanterías" class="img-fluid">
+              <div class="category-overlay"><h4>Estanterías</h4></div>
+            </div>
+            <div class="category-card flex-shrink-0" style="width:220px;">
+              <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-5.jpg" alt="Racks TV" class="img-fluid">
+              <div class="category-overlay"><h4>Racks TV</h4></div>
+            </div>
+            <div class="category-card flex-shrink-0" style="width:220px;">
+              <img src="assets/ImagenesParaUsar/RPZ08134.jpg" alt="Decoración" class="img-fluid">
+              <div class="category-overlay"><h4>Decoración</h4></div>
+            </div>
+            <div class="category-card flex-shrink-0" style="width:220px;">
+              <img src="assets/ImagenesParaUsar/RPZ08206.jpg" alt="Sillas" class="img-fluid">
+              <div class="category-overlay"><h4>Sillas</h4></div>
+            </div>
+            <div class="category-card flex-shrink-0" style="width:220px;">
+              <img src="assets/ImagenesParaUsar/RPZ07928.jpg" alt="Puertas" class="img-fluid">
+              <div class="category-overlay"><h4>Puertas</h4></div>
+            </div>
+            <div class="category-card flex-shrink-0" style="width:220px;">
+              <img src="assets/ImagenesParaUsar/RPZ08026.jpg" alt="Muebles de Jardín" class="img-fluid">
+              <div class="category-overlay"><h4>Muebles de Jardín</h4></div>
             </div>
           </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
-          <div class="category-card">
-            <img src="assets/Agosto/AGOSTO/_A7_6042.jpg" alt="Estanterías" class="img-fluid">
-            <div class="category-overlay">
-              <h4>Estanterías</h4>
-              <p>Funcionalidad y estilo</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
-          <div class="category-card">
-            <img src="assets/Agosto/AGOSTO/_A7_6043.jpg" alt="Muebles TV" class="img-fluid">
-            <div class="category-overlay">
-              <h4>Muebles TV</h4>
-              <p>El centro de tu sala</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
-          <div class="category-card">
-            <img src="assets/Agosto/AGOSTO/_A7_6051.jpg" alt="Decoración" class="img-fluid">
-            <div class="category-overlay">
-              <h4>Decoración</h4>
-              <p>Detalles que marcan la diferencia</p>
-            </div>
-          </div>
+          <button id="catNext" class="btn btn-custom position-absolute top-50 end-0 translate-middle-y" style="z-index:2;right:-20px;"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
       
-      <div class="text-center mt-5" data-aos="fade-up">
-        <a href="#" class="btn btn-custom btn-lg">Ver todos los proyectos</a>
-      </div>
       <!-- Galería extendida de imágenes reales -->
       <div class="section-title text-center mt-5" data-aos="fade-up">
         <h2>Galería de Inspiración</h2>
@@ -928,6 +921,40 @@ document.addEventListener('DOMContentLoaded', function() {
       modal.show();
     });
   }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const catSlider = document.getElementById('catSlider');
+  const cards = Array.from(catSlider.getElementsByClassName('category-card'));
+  let start = 0;
+  const visible = 4; // Número de categorías visibles a la vez
+
+  // Ajustar el ancho del slider dinámicamente
+  function updateSliderWidth() {
+    catSlider.style.width = (cards.length * 340 + (cards.length - 1) * 24) + 'px';
+  }
+  updateSliderWidth();
+
+  function updateSlider() {
+    const offset = start * (340 + 24); // ancho tarjeta + gap
+    catSlider.style.transform = `translateX(-${offset}px)`;
+    catSlider.style.transition = 'transform 0.5s cubic-bezier(.4,1.4,.6,1)';
+  }
+
+  document.getElementById('catPrev').onclick = function() {
+    if (start > 0) {
+      start--;
+      updateSlider();
+    }
+  };
+  document.getElementById('catNext').onclick = function() {
+    if (start < cards.length - visible) {
+      start++;
+      updateSlider();
+    }
+  };
+  updateSlider();
 });
 </script>
 </body>

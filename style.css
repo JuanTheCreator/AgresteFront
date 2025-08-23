@@ -160,28 +160,54 @@ section {
   color: var(--secondary-color);
 }
 
-/* Título blanco para la sección "Nuestro proceso" */
+/* Títulos en blanco para Servicios y Proceso */
+.services .section-title h2,
 .process .section-title h2 {
-  color: var(--text-color);
-}
-
-/* Título blanco para la sección "Nuestros servicios" */
-.services .section-title h2 {
-  color: var(--text-color);
+  color: #fff !important;
 }
 
 
-.title-line {
-  width: 70px;
-  height: 3px;
-  background-color: var(--primary-color);
-  margin-bottom: 1.5rem;
+/* Slider horizontal de categorías */
+.category-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-/* About Section */
-.about {
-  background-color: var(--bg-light);
-  color: var(--text-dark);
+#catSlider {
+  display: flex;
+  gap: 24px;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  margin-bottom: 32px;
+  margin-right: 18px;
+  cursor: pointer;
+  min-width: 340px;
+  max-width: 340px;
+  flex: 0 0 340px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: box-shadow 0.4s, transform 0.4s;
+  background: none;
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+.category-card.fade-out {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+}
+.category-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .about h3 {
@@ -312,13 +338,33 @@ section {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   cursor: pointer;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.category-card.fade-out {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+}
+
+.category-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .category-card img {
   width: 100%;
-  height: 250px;
+  height: 340px;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  margin: 0;
+  display: block;
+  background: transparent;
+  transition: transform 0.5s cubic-bezier(.4,1.4,.6,1);
+  border-radius: 18px;
+  filter: none;
 }
 
 .category-overlay {
@@ -326,11 +372,13 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-  padding: 20px;
-  color: var(--text-color);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 70%, transparent 100%);
+  padding: 0 0 24px 0;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  border-radius: 0 0 18px 18px;
+  box-shadow: none;
 }
 
 .category-card:hover img {
@@ -342,8 +390,12 @@ section {
 }
 
 .category-overlay h4 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 2.1rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 12px #000, 0 1px 0 #232323;
+  padding-bottom: 2px;
 }
 
 /* Extended Gallery Styles */
@@ -380,7 +432,11 @@ section {
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.13) rotate(-3deg);
+}
+.category-card:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+  transform: translateY(-8px) scale(1.03);
 }
 
 .gallery-item:hover .gallery-overlay {
