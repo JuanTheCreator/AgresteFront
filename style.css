@@ -723,6 +723,16 @@ section {
   transform: translateY(-5px);
 }
 
+/* Mejora de legibilidad para la galería de productos */
+.gallery .overlay-hover {
+  background: rgba(255,255,255,0.92) !important;
+}
+.gallery .project-info,
+.gallery .project-info h4,
+.gallery .project-info p {
+  color: #111 !important;
+}
+
 /* Responsive Styles */
 @media (max-width: 991px) {
   .navbar-collapse {
