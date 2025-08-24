@@ -76,7 +76,6 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/AgresteTransparente.png') center/cover no-repeat fixed;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -84,6 +83,9 @@ body {
   text-align: center;
   position: relative;
   color: var(--text-color);
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition);
 }
 
 .hero .overlay {
@@ -92,7 +94,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--primary-color);
+  opacity: 0.55;
+  transition: var(--transition);
 }
 
 .hero h1 {
@@ -106,6 +110,17 @@ body {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Carousel */
+.hero-carousel .carousel-item {
+  height: 100vh;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-carousel .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next-icon {
+  filter: invert(1);
 }
 
 /* Buttons */
