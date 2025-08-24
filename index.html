@@ -201,34 +201,34 @@
         <div class="title-line mx-auto"></div>
       </div>
       <div class="container mb-5">
-        <div class="position-relative">
+        <div class="position-relative category-slider-wrapper">
           <button id="catPrev" class="btn btn-custom position-absolute top-50 start-0 translate-middle-y" style="z-index:2;left:-20px;"><i class="fas fa-chevron-left"></i></button>
-          <div id="catSlider" class="d-flex gap-3 px-5" style="overflow:hidden;">
-            <div class="category-card flex-shrink-0" style="width:220px;">
+          <div id="catSlider" class="d-flex gap-3 px-5">
+            <div class="category-card flex-shrink-0">
               <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-12.jpg" alt="Mesas" class="img-fluid">
               <div class="category-overlay"><h4>Mesas</h4></div>
             </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
+            <div class="category-card flex-shrink-0">
               <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-18.jpg" alt="Estanterías" class="img-fluid">
               <div class="category-overlay"><h4>Estanterías</h4></div>
             </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
+            <div class="category-card flex-shrink-0">
               <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-5.jpg" alt="Racks TV" class="img-fluid">
               <div class="category-overlay"><h4>Racks TV</h4></div>
             </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
+            <div class="category-card flex-shrink-0">
               <img src="assets/ImagenesParaUsar/RPZ08134.jpg" alt="Decoración" class="img-fluid">
               <div class="category-overlay"><h4>Decoración</h4></div>
             </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
+            <div class="category-card flex-shrink-0">
               <img src="assets/ImagenesParaUsar/RPZ08206.jpg" alt="Sillas" class="img-fluid">
               <div class="category-overlay"><h4>Sillas</h4></div>
             </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
+            <div class="category-card flex-shrink-0">
               <img src="assets/ImagenesParaUsar/RPZ07928.jpg" alt="Puertas" class="img-fluid">
               <div class="category-overlay"><h4>Puertas</h4></div>
             </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
+            <div class="category-card flex-shrink-0">
               <img src="assets/ImagenesParaUsar/RPZ08026.jpg" alt="Muebles de Jardín" class="img-fluid">
               <div class="category-overlay"><h4>Muebles de Jardín</h4></div>
             </div>
@@ -927,33 +927,46 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const catSlider = document.getElementById('catSlider');
   const cards = Array.from(catSlider.getElementsByClassName('category-card'));
+  const prevBtn = document.getElementById('catPrev');
+  const nextBtn = document.getElementById('catNext');
   let start = 0;
-  const visible = 4; // Número de categorías visibles a la vez
+  let visible = 0;
+  let cardWidth = 0;
+  let gap = 0;
 
-  // Ajustar el ancho del slider dinámicamente
-  function updateSliderWidth() {
-    catSlider.style.width = (cards.length * 340 + (cards.length - 1) * 24) + 'px';
+  function updateMetrics() {
+    const styles = window.getComputedStyle(catSlider);
+    gap = parseInt(styles.columnGap || styles.gap) || 0;
+    cardWidth = cards[0].offsetWidth;
+    visible = Math.floor(catSlider.parentElement.offsetWidth / (cardWidth + gap));
   }
-  updateSliderWidth();
 
   function updateSlider() {
-    const offset = start * (340 + 24); // ancho tarjeta + gap
+    const offset = start * (cardWidth + gap);
     catSlider.style.transform = `translateX(-${offset}px)`;
     catSlider.style.transition = 'transform 0.5s cubic-bezier(.4,1.4,.6,1)';
   }
 
-  document.getElementById('catPrev').onclick = function() {
+  prevBtn.addEventListener('click', () => {
     if (start > 0) {
       start--;
       updateSlider();
     }
-  };
-  document.getElementById('catNext').onclick = function() {
+  });
+
+  nextBtn.addEventListener('click', () => {
     if (start < cards.length - visible) {
       start++;
       updateSlider();
     }
-  };
+  });
+
+  window.addEventListener('resize', () => {
+    updateMetrics();
+    updateSlider();
+  });
+
+  updateMetrics();
   updateSlider();
 });
 </script>
