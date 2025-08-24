@@ -12,6 +12,8 @@
   --text-dark: #333333; /* Negro para texto */
   --bg-light: #f8f9fa; /* Fondo claro */
   --bg-dark: #121212; /* Fondo oscuro */
+  --primary-color-hover: #a50000; /* Rojo corporativo intenso */
+  --gray-light: #aaaaaa; /* Gris claro para textos secundarios */
   --transition: all 0.3s ease;
 }
 
@@ -163,7 +165,7 @@ section {
 /* Títulos en blanco para Servicios y Proceso */
 .services .section-title h2,
 .process .section-title h2 {
-  color: #fff !important;
+  color: var(--text-color) !important;
 }
 
 
@@ -374,7 +376,7 @@ section {
   right: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7) 70%, transparent 100%);
   padding: 0 0 24px 0;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   width: 100%;
   border-radius: 0 0 18px 18px;
@@ -689,7 +691,7 @@ section {
 }
 
 .footer-links ul li a {
-  color: #aaa;
+  color: var(--gray-light);
   text-decoration: none;
   transition: var(--transition);
 }
@@ -723,7 +725,7 @@ section {
 }
 
 .footer-newsletter button:hover {
-  background-color: #a50000;
+  background-color: var(--primary-color-hover);
 }
 
 .footer-bottom {
@@ -737,7 +739,7 @@ section {
 }
 
 .credits a {
-  color: #aaa;
+  color: var(--gray-light);
   text-decoration: none;
   transition: var(--transition);
   margin-left: 0.5rem;
@@ -774,7 +776,7 @@ section {
 }
 
 .back-to-top:hover {
-  background-color: #a50000;
+  background-color: var(--primary-color-hover);
   color: var(--text-color);
   transform: translateY(-5px);
 }
