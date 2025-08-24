@@ -12,6 +12,8 @@
   --text-dark: #333333; /* Negro para texto */
   --bg-light: #f8f9fa; /* Fondo claro */
   --bg-dark: #121212; /* Fondo oscuro */
+  --primary-color-hover: #a50000; /* Rojo corporativo intenso */
+  --gray-light: #aaaaaa; /* Gris claro para textos secundarios */
   --transition: all 0.3s ease;
 }
 
@@ -74,7 +76,6 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/AgresteTransparente.png') center/cover no-repeat fixed;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -82,6 +83,9 @@ body {
   text-align: center;
   position: relative;
   color: var(--text-color);
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition);
 }
 
 .hero .overlay {
@@ -90,7 +94,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--primary-color);
+  opacity: 0.55;
+  transition: var(--transition);
 }
 
 .hero h1 {
@@ -104,6 +110,17 @@ body {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Hero Carousel */
+.hero-carousel .carousel-item {
+  height: 100vh;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-carousel .carousel-control-prev-icon,
+.hero-carousel .carousel-control-next-icon {
+  filter: invert(1);
 }
 
 /* Buttons */
@@ -163,7 +180,7 @@ section {
 /* Títulos en blanco para Servicios y Proceso */
 .services .section-title h2,
 .process .section-title h2 {
-  color: #fff !important;
+  color: var(--text-color) !important;
 }
 
 
@@ -383,7 +400,7 @@ section {
   right: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7) 70%, transparent 100%);
   padding: 0 0 24px 0;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   width: 100%;
   border-radius: 0 0 18px 18px;
@@ -698,7 +715,7 @@ section {
 }
 
 .footer-links ul li a {
-  color: #aaa;
+  color: var(--gray-light);
   text-decoration: none;
   transition: var(--transition);
 }
@@ -732,7 +749,7 @@ section {
 }
 
 .footer-newsletter button:hover {
-  background-color: #a50000;
+  background-color: var(--primary-color-hover);
 }
 
 .footer-bottom {
@@ -746,7 +763,7 @@ section {
 }
 
 .credits a {
-  color: #aaa;
+  color: var(--gray-light);
   text-decoration: none;
   transition: var(--transition);
   margin-left: 0.5rem;
@@ -783,7 +800,7 @@ section {
 }
 
 .back-to-top:hover {
-  background-color: #a50000;
+  background-color: var(--primary-color-hover);
   color: var(--text-color);
   transform: translateY(-5px);
 }
