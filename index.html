@@ -6,6 +6,10 @@
   <meta name="description" content="Agreste - Soluciones en madera personalizadas de alta calidad. Diseños únicos y elegantes para tu hogar o negocio.">
   <meta name="keywords" content="madera, carpintería, diseño, personalizado, muebles, decoración, Agreste">
   <title>Agreste | Madera Personalizada</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -15,33 +19,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
+  <!-- NAVBAR - Timberland Style -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/logo_blanco.png" alt="Agreste Logo" height="40">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#nosotros">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#servicios">Servicios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#proyectos">Proyectos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
-        </ul>
+    <div class="container nav-underline-minimal d-flex align-items-center justify-content-between py-1">
+      <div class="d-flex align-items-center w-100">
+        <a class="navbar-brand nav-underline-logo d-flex align-items-center me-2 pe-0" href="#" style="margin-right:auto;">
+          <img src="assets/logo_blanco.png" alt="Agreste Logo" height="34">
+        </a>
+        <button class="navbar-toggler d-lg-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavUnderline" aria-controls="navbarNavUnderline" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-underline-collapse" id="navbarNavUnderline">
+          <ul class="navbar-nav flex-row flex-lg-row flex-column align-items-center align-items-lg-center nav-underline-menu m-0 p-0 ms-lg-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#proyectos">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -53,8 +49,8 @@
       <div class="row justify-content-center">
         <div class="col-lg-8" data-aos="fade-up" data-aos-duration="1000">
           <!--<img src="assets/logo.png" alt="Agreste" class="img-fluid mb-4" style="max-width: 300px;">-->
+          <p class="lead hero-subtitle">Bienvenido</p>
           <h1 class="display-4 fw-bold">Madera que inspira, calidad que perdura</h1>
-          <p class="lead">Diseñamos piezas únicas, contigo en cada paso</p>
           <div class="mt-4">
             <a href="#contacto" class="btn btn-outline-light btn-lg me-2"><i class="fas fa-envelope me-2"></i>Contáctanos</a>
             <a href="#proyectos" class="btn btn-custom btn-lg"><i class="fas fa-eye me-2"></i>Ver proyectos</a>
@@ -78,6 +74,7 @@
           </div>
           <h3 class="mb-3">Atención 100% personalizada</h3>
           <p class="mb-4">En Agreste, creamos soluciones a medida. Nuestro equipo de artesanos expertos te acompaña desde la idea inicial hasta el resultado final, asegurando que cada pieza refleje tu visión y ajusta tus necesidades.</p>
+          <p class="elegant-italic mb-4">"Cada proyecto es una historia única que merece ser contada con la mejor madera"</p>
           <div class="features">
             <div class="feature-item">
               <i class="fas fa-check-circle"></i>
@@ -103,37 +100,37 @@
   
   <!-- SERVICIOS -->
   <section id="servicios" class="services">
-    <div class="container py-5">
+    <div class="container">
       <div class="section-title text-center" data-aos="fade-up">
         <h2>Nuestros Servicios</h2>
         <div class="title-line mx-auto"></div>
         <p class="lead">Soluciones en madera para cada necesidad</p>
       </div>
-      <div class="row g-4 mt-3">
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-card">
-            <div class="icon-box">
-              <i class="fas fa-home"></i>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card text-center">
+            <div class="icon-box mx-auto mb-3">
+              <i class="fas fa-couch"></i>
             </div>
-            <h3>Mobiliario para hogar</h3>
+            <h4>Mobiliario para hogar</h4>
             <p>Creamos muebles únicos que transforman tu espacio con elegancia y funcionalidad.</p>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-card">
-            <div class="icon-box">
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card text-center">
+            <div class="icon-box mx-auto mb-3">
               <i class="fas fa-store"></i>
             </div>
-            <h3>Proyectos comerciales</h3>
+            <h4>Proyectos comerciales</h4>
             <p>Diseñamos espacios comerciales que reflejan la identidad de tu marca y atraen clientes.</p>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-card">
-            <div class="icon-box">
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card text-center">
+            <div class="icon-box mx-auto mb-3">
               <i class="fas fa-drafting-compass"></i>
             </div>
-            <h3>Diseño personalizado</h3>
+            <h4>Diseño personalizado</h4>
             <p>Convertimos tus ideas en realidad con diseños a medida que satisfacen tus necesidades.</p>
           </div>
         </div>
@@ -154,7 +151,7 @@
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
           <div class="project-card">
             <div class="project-img">
-              <img src="assets/Noviembre/NOVIEMBRE/RPZ09652.jpg" alt="Mesa de Centro" class="img-fluid" />
+              <img data-src="assets/Noviembre/NOVIEMBRE/RPZ09652.jpg" alt="Mesa de Centro" class="img-fluid lazy-load" loading="lazy" />
               <div class="overlay-hover">
                 <div class="project-info">
                   <h4>Mesa de Centro</h4>
@@ -168,7 +165,7 @@
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
           <div class="project-card">
             <div class="project-img">
-              <img src="assets/Noviembre/NOVIEMBRE/RPZ09701.jpg" alt="Estantería Modular" class="img-fluid" />
+              <img data-src="assets/Noviembre/NOVIEMBRE/RPZ09701.jpg" alt="Estantería Modular" class="img-fluid lazy-load" loading="lazy" />
               <div class="overlay-hover">
                 <div class="project-info">
                   <h4>Estantería Modular</h4>
@@ -182,7 +179,7 @@
         <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
           <div class="project-card">
             <div class="project-img">
-              <img src="assets/Noviembre/NOVIEMBRE/RPZ09747.jpg" alt="Mobiliario Comercial" class="img-fluid" />
+              <img data-src="assets/Noviembre/NOVIEMBRE/RPZ09747.jpg" alt="Mobiliario Comercial" class="img-fluid lazy-load" loading="lazy" />
               <div class="overlay-hover">
                 <div class="project-info">
                   <h4>Mobiliario Comercial</h4>
@@ -195,53 +192,84 @@
         </div>
       </div>
       
-      <!-- Categorías de Productos como slider sin scroll -->
+      <!-- Categorías Destacadas -->
       <div class="section-title text-center mt-5" data-aos="fade-up">
         <h3>Categorías Destacadas</h3>
         <div class="title-line mx-auto"></div>
+        <p class="lead">Explora nuestras especialidades en carpintería</p>
       </div>
       <div class="container mb-5">
-        <div class="position-relative">
-          <button id="catPrev" class="btn btn-custom position-absolute top-50 start-0 translate-middle-y" style="z-index:2;left:-20px;"><i class="fas fa-chevron-left"></i></button>
-          <div id="catSlider" class="d-flex gap-3 px-5" style="overflow:hidden;">
-            <div class="category-card flex-shrink-0" style="width:220px;">
-              <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-12.jpg" alt="Mesas" class="img-fluid">
-              <div class="category-overlay"><h4>Mesas</h4></div>
-            </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
-              <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-18.jpg" alt="Estanterías" class="img-fluid">
-              <div class="category-overlay"><h4>Estanterías</h4></div>
-            </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
-              <img src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-5.jpg" alt="Racks TV" class="img-fluid">
-              <div class="category-overlay"><h4>Racks TV</h4></div>
-            </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
-              <img src="assets/ImagenesParaUsar/RPZ08134.jpg" alt="Decoración" class="img-fluid">
-              <div class="category-overlay"><h4>Decoración</h4></div>
-            </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
-              <img src="assets/ImagenesParaUsar/RPZ08206.jpg" alt="Sillas" class="img-fluid">
-              <div class="category-overlay"><h4>Sillas</h4></div>
-            </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
-              <img src="assets/ImagenesParaUsar/RPZ07928.jpg" alt="Puertas" class="img-fluid">
-              <div class="category-overlay"><h4>Puertas</h4></div>
-            </div>
-            <div class="category-card flex-shrink-0" style="width:220px;">
-              <img src="assets/ImagenesParaUsar/RPZ08026.jpg" alt="Muebles de Jardín" class="img-fluid">
-              <div class="category-overlay"><h4>Muebles de Jardín</h4></div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="categories-intro" data-aos="fade-right">
+              <div class="section-title">
+                <h2>Nuestras Especialidades</h2>
+                <div class="title-line"></div>
+              </div>
+              <h3>LO QUE CREAMOS</h3>
+              <p>Nuestro equipo de artesanos experimentados se especializa en crear piezas únicas de carpintería. Siempre estamos al día con las últimas tendencias y nos dedicamos a ayudarte a encontrar las soluciones perfectas para tu hogar.</p>
+              <a href="#proyectos" class="btn btn-outline-custom">VER TODOS LOS PROYECTOS</a>
             </div>
           </div>
-          <button id="catNext" class="btn btn-custom position-absolute top-50 end-0 translate-middle-y" style="z-index:2;right:-20px;"><i class="fas fa-chevron-right"></i></button>
+          <div class="col-lg-8">
+            <div class="row g-3">
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="category-service-card">
+                  <div class="category-image">
+                    <img data-src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-12.jpg" alt="Mesas" class="img-fluid lazy-load" loading="lazy">
+                  </div>
+                  <div class="category-content">
+                    <h4>MESAS</h4>
+                    <p>Creamos mesas únicas que combinan funcionalidad y diseño. Desde mesas de comedor familiares hasta escritorios de trabajo, cada pieza está diseñada para durar generaciones.</p>
+                    <a href="#" class="category-btn">VER MÁS</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="category-service-card">
+                  <div class="category-image">
+                    <img data-src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-18.jpg" alt="Estanterías" class="img-fluid lazy-load" loading="lazy">
+                  </div>
+                  <div class="category-content">
+                    <h4>ESTANTERÍAS</h4>
+                    <p>Soluciones de almacenamiento elegantes y funcionales. Nuestras estanterías maximizan el espacio mientras añaden un toque de sofisticación a cualquier ambiente.</p>
+                    <a href="#" class="category-btn">VER MÁS</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="category-service-card">
+                  <div class="category-image">
+                    <img data-src="assets/Taller/TALLER AGRESTE COLOR_/25. ENERO HIST-5.jpg" alt="Racks TV" class="img-fluid lazy-load" loading="lazy">
+                  </div>
+                  <div class="category-content">
+                    <h4>RACKS TV</h4>
+                    <p>Centros de entretenimiento diseñados para organizar y exhibir tu tecnología de manera elegante, integrándose perfectamente con la decoración de tu hogar.</p>
+                    <a href="#" class="category-btn">VER MÁS</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="category-service-card">
+                  <div class="category-image">
+                    <img data-src="assets/Agosto/AGOSTO/RPZ08134.jpg" alt="Decoración" class="img-fluid lazy-load" loading="lazy">
+                  </div>
+                  <div class="category-content">
+                    <h4>DECORACIÓN</h4>
+                    <p>Elementos decorativos únicos que añaden personalidad y calidez a tus espacios. Cada pieza está cuidadosamente diseñada para complementar tu estilo.</p>
+                    <a href="#" class="category-btn">VER MÁS</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
       <!-- Galería extendida de imágenes reales -->
       <div class="section-title text-center mt-5" data-aos="fade-up">
         <h2>Galería de Inspiración</h2>
-        <div class="title-line mx-auto"></div>
-        <p class="lead">Déjate inspirar por algunos de nuestros trabajos y detalles en madera</p>
+        <p class="elegant-italic mt-3">"Donde la creatividad se encuentra con la maestría artesanal"</p>
       </div>
       <div class="extended-gallery mt-4">
         <div class="row g-3">
@@ -339,29 +367,29 @@
       </div>
       <div class="container" style="max-width: 800px;">
         <div id="detalleCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-aos="fade-up">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
               <img src="assets/Noviembre/NOVIEMBRE/RPZ09701.jpg" class="d-block w-100 rounded" alt="Detalle 1" style="height: 400px; object-fit: cover;">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Acabados Perfectos</h5>
                 <p>Cada pieza recibe un tratamiento especial</p>
-              </div>
             </div>
-            <div class="carousel-item">
+          </div>
+          <div class="carousel-item">
               <img src="assets/Noviembre/NOVIEMBRE/RPZ09747.jpg" class="d-block w-100 rounded" alt="Detalle 2" style="height: 400px; object-fit: cover;">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Diseño Contemporáneo</h5>
                 <p>Líneas limpias y estética moderna</p>
-              </div>
             </div>
-            <div class="carousel-item">
+          </div>
+          <div class="carousel-item">
               <img src="assets/Noviembre/NOVIEMBRE/RPZ09975.jpg" class="d-block w-100 rounded" alt="Detalle 3" style="height: 400px; object-fit: cover;">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Espacios Funcionales</h5>
                 <p>Muebles que se adaptan a tu estilo de vida</p>
-              </div>
             </div>
-            <div class="carousel-item">
+          </div>
+          <div class="carousel-item">
               <img src="assets/Noviembre/NOVIEMBRE/RPZ09652.jpg" class="d-block w-100 rounded" alt="Detalle 4" style="height: 400px; object-fit: cover;">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Materiales Premium</h5>
@@ -377,7 +405,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Siguiente</span>
           </button>
-        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -754,12 +782,227 @@
   <!-- Botón de regreso arriba -->
   <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
   
+
+  
+  <!-- Progress Bar -->  
+  <div id="progressBar" class="progress-bar-container">
+    <div class="progress-bar-fill"></div>
+  </div>
+
+  <!-- Page Reveal Overlay -->
+  <div id="pageReveal" class="page-reveal-overlay">
+    <div class="reveal-content">
+      <div class="reveal-logo">
+        <img src="assets/AgresteTransparente.png" alt="Agreste" class="reveal-logo-img">
+      </div>
+      <div class="reveal-text">
+        <h2>Creando espacios únicos</h2>
+        <div class="reveal-progress">
+          <div class="reveal-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Custom JS -->
   <script>
+    // ===== SISTEMA DE REVELADO PROGRESIVO =====
+    
+    class PageRevealSystem {
+      constructor() {
+        this.overlay = document.getElementById('pageReveal');
+        this.progressBar = document.getElementById('progressBar');
+        this.progressFill = document.querySelector('.progress-bar-fill');
+        this.revealProgressBar = document.querySelector('.reveal-progress-bar');
+        this.isRevealed = false;
+        this.init();
+      }
+      
+      init() {
+        // Simular carga de contenido
+        this.simulateLoading();
+        
+        // Configurar barra de progreso de scroll
+        this.setupScrollProgress();
+        
+        // Configurar animaciones escalonadas
+        this.setupStaggerAnimations();
+        
+        // Configurar revelado de secciones
+        this.setupSectionReveal();
+      }
+      
+      simulateLoading() {
+        let progress = 0;
+        const interval = setInterval(() => {
+          progress += Math.random() * 15;
+          if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            setTimeout(() => this.hideReveal(), 500);
+          }
+          this.revealProgressBar.style.width = progress + '%';
+        }, 100);
+      }
+      
+      hideReveal() {
+        this.overlay.classList.add('hidden');
+        this.isRevealed = true;
+        
+        // Mostrar barra de progreso de scroll
+        setTimeout(() => {
+          this.progressBar.classList.add('visible');
+          this.triggerStaggerAnimations();
+        }, 800);
+        
+        // Remover overlay del DOM después de la animación
+        setTimeout(() => {
+          this.overlay.style.display = 'none';
+        }, 1600);
+      }
+      
+      setupScrollProgress() {
+        window.addEventListener('scroll', () => {
+          if (!this.isRevealed) return;
+          
+          const scrollTop = window.pageYOffset;
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = (scrollTop / docHeight) * 100;
+          
+          this.progressFill.style.width = scrollPercent + '%';
+        });
+      }
+      
+      setupStaggerAnimations() {
+        // Agregar clases de animación a elementos principales
+        const elementsToAnimate = [
+          '.navbar',
+          '.hero-content',
+          '.services .container',
+          '.gallery .container',
+          '.process .container',
+          '.testimonials .container',
+          '.contact .container',
+          'footer'
+        ];
+        
+        elementsToAnimate.forEach(selector => {
+          const element = document.querySelector(selector);
+          if (element) {
+            element.classList.add('stagger-animation');
+          }
+        });
+      }
+      
+      triggerStaggerAnimations() {
+        const elements = document.querySelectorAll('.stagger-animation');
+        elements.forEach((element, index) => {
+          setTimeout(() => {
+            element.classList.add('revealed');
+          }, index * 150);
+        });
+      }
+      
+      setupSectionReveal() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+          section.classList.add('section-reveal');
+        });
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && this.isRevealed) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        });
+        
+        sections.forEach(section => observer.observe(section));
+      }
+    }
+    
+    // Lazy Loading Implementation
+    class LazyLoader {
+      constructor() {
+        this.imageObserver = null;
+        this.config = {
+          rootMargin: '50px 0px',
+          threshold: 0.01
+        };
+      }
+
+      init() {
+        if ('IntersectionObserver' in window) {
+          this.imageObserver = new IntersectionObserver(this.onIntersection.bind(this), this.config);
+          this.observeImages();
+        } else {
+          // Fallback for older browsers
+          this.loadAllImages();
+        }
+      }
+
+      observeImages() {
+        const lazyImages = document.querySelectorAll('.lazy-load');
+        lazyImages.forEach(img => {
+          this.imageObserver.observe(img);
+        });
+      }
+
+      onIntersection(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            this.loadImage(img);
+            this.imageObserver.unobserve(img);
+          }
+        });
+      }
+
+      loadImage(img) {
+        const src = img.getAttribute('data-src');
+        if (!src) return;
+
+        img.classList.add('loading');
+        
+        const imageLoader = new Image();
+        imageLoader.onload = () => {
+          img.src = src;
+          img.classList.remove('loading');
+          img.classList.add('loaded');
+          img.removeAttribute('data-src');
+        };
+        
+        imageLoader.onerror = () => {
+          img.classList.remove('loading');
+          console.warn('Failed to load image:', src);
+        };
+        
+        imageLoader.src = src;
+      }
+
+      loadAllImages() {
+        const lazyImages = document.querySelectorAll('.lazy-load');
+        lazyImages.forEach(img => {
+          this.loadImage(img);
+        });
+      }
+    }
+
+    // Inicializar sistema de revelado
+    document.addEventListener('DOMContentLoaded', () => {
+      new PageRevealSystem();
+      
+      const lazyLoader = new LazyLoader();
+      lazyLoader.init();
+    });
+    
     // Inicializar AOS
     AOS.init();
     
@@ -910,52 +1153,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  const verTodosBtn = document.querySelector('.btn.btn-custom.btn-lg');
-  if (verTodosBtn) {
-    verTodosBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      projectModalLabel.textContent = 'Todos los Proyectos';
-      projectModalImg.src = 'assets/Agreste_logo_white.png';
-      projectModalDesc.textContent = 'Aquí podrías mostrar una galería o listado de todos tus proyectos destacados.';
-      const modal = new bootstrap.Modal(projectModal);
-      modal.show();
-    });
-  }
+
 });
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const catSlider = document.getElementById('catSlider');
-  const cards = Array.from(catSlider.getElementsByClassName('category-card'));
-  let start = 0;
-  const visible = 4; // Número de categorías visibles a la vez
 
-  // Ajustar el ancho del slider dinámicamente
-  function updateSliderWidth() {
-    catSlider.style.width = (cards.length * 340 + (cards.length - 1) * 24) + 'px';
-  }
-  updateSliderWidth();
-
-  function updateSlider() {
-    const offset = start * (340 + 24); // ancho tarjeta + gap
-    catSlider.style.transform = `translateX(-${offset}px)`;
-    catSlider.style.transition = 'transform 0.5s cubic-bezier(.4,1.4,.6,1)';
-  }
-
-  document.getElementById('catPrev').onclick = function() {
-    if (start > 0) {
-      start--;
-      updateSlider();
-    }
-  };
-  document.getElementById('catNext').onclick = function() {
-    if (start < cards.length - visible) {
-      start++;
-      updateSlider();
-    }
-  };
-  updateSlider();
-});
-</script>
 </body>
 </html>
