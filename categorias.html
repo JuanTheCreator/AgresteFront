@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0"/>
+  <meta name="description" content="Explora nuestra amplia gama de muebles artesanales: mesas, estanterías, racks y decoración personalizada.">
+  <title>Categorías | Agreste</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR - Timberland Style -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container nav-underline-minimal d-flex align-items-center justify-content-between py-1">
+      <a class="navbar-brand nav-underline-logo d-flex align-items-center" href="index.html">
+        <img src="assets/logo_blanco.png" alt="Agreste Logo" height="34">
+      </a>
+      
+      <div class="d-flex align-items-center">
+        <div class="collapse navbar-collapse nav-underline-collapse" id="navbarNavUnderline">
+          <ul class="navbar-nav flex-row flex-lg-row flex-column align-items-center align-items-lg-center nav-underline-menu m-0 p-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="categorias.html">Categorías</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#proyectos">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <button class="navbar-toggler d-lg-none ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavUnderline" aria-controls="navbarNavUnderline" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-categories">
+    <div class="hero-overlay d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8" data-aos="fade-up">
+            <h1 class="display-4 fw-bold mb-4">Nuestras Categorías</h1>
+            <p class="lead mb-4">Explora toda nuestra gama de productos en madera personalizada</p>
+            <div class="search-box mb-4">
+              <div class="input-group input-group-lg">
+                <input type="text" class="form-control" placeholder="Buscar productos..." id="searchInput">
+                <button class="btn btn-custom" type="button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTROS -->
+  <section class="filters py-4 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h5 class="mb-0">Filtrar por categoría:</h5>
+        </div>
+        <div class="col-md-6">
+          <div class="filter-buttons d-flex flex-wrap gap-2 justify-content-md-end">
+            <button class="btn btn-outline-primary active" data-filter="all">Todos</button>
+            <button class="btn btn-outline-primary" data-filter="mesas">Mesas</button>
+            <button class="btn btn-outline-primary" data-filter="estanterias">Estanterías</button>
+            <button class="btn btn-outline-primary" data-filter="racks">Racks TV</button>
+            <button class="btn btn-outline-primary" data-filter="decoracion">Decoración</button>
+            <button class="btn btn-outline-primary" data-filter="comercial">Comercial</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section class="products py-5">
+    <div class="container">
+      <div class="row g-4" id="productsGrid">
+        
+        <!-- Mesa de Centro -->
+        <div class="col-lg-4 col-md-6 col-sm-6 product-item" data-category="mesas">
+          <div class="product-card" data-aos="fade-up">
+            <div class="product-image">
+              <img src="assets/ImagenesParaUsar/RPZ08134.jpg" alt="Mesa de Centro" class="img-fluid">
+              <div class="product-overlay">
+                <button class="btn btn-light btn-sm" onclick="viewProduct('mesa-centro')">Ver Detalles</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h5>Mesa de Centro Rústica</h5>
+              <p class="text-muted">Mesa de centro en madera maciza con acabado natural</p>
+              <div class="price">Desde $150.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mesa de Comedor -->
+        <div class="col-lg-4 col-md-6 col-sm-6 product-item" data-category="mesas">
+          <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="product-image">
+              <img src="assets/ImagenesParaUsar/RPZ08145.jpg" alt="Mesa de Comedor" class="img-fluid">
+              <div class="product-overlay">
+                <button class="btn btn-light btn-sm" onclick="viewProduct('mesa-comedor')">Ver Detalles</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h5>Mesa de Comedor Familiar</h5>
+              <p class="text-muted">Mesa extensible para 6-8 personas en roble</p>
+              <div class="price">Desde $350.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estantería Modular -->
+        <div class="col-lg-4 col-md-6 col-sm-6 product-item" data-category="estanterias">
+          <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="product-image">
+              <img src="assets/ImagenesParaUsar/RPZ08172.jpg" alt="Estantería" class="img-fluid">
+              <div class="product-overlay">
+                <button class="btn btn-light btn-sm" onclick="viewProduct('estanteria-modular')">Ver Detalles</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h5>Estantería Modular</h5>
+              <p class="text-muted">Sistema modular adaptable a cualquier espacio</p>
+              <div class="price">Desde $200.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rack TV -->
+        <div class="col-lg-4 col-md-6 col-sm-6 product-item" data-category="racks">
+          <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="product-image">
+              <img src="assets/ImagenesParaUsar/RACK 1.jpg" alt="Rack TV" class="img-fluid">
+              <div class="product-overlay">
+                <button class="btn btn-light btn-sm" onclick="viewProduct('rack-tv')">Ver Detalles</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h5>Rack TV Minimalista</h5>
+              <p class="text-muted">Centro de entretenimiento con almacenamiento</p>
+              <div class="price">Desde $180.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decoración -->
+        <div class="col-lg-4 col-md-6 col-sm-6 product-item" data-category="decoracion">
+          <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="product-image">
+              <img src="assets/ImagenesParaUsar/RPZ08245.jpg" alt="Decoración" class="img-fluid">
+              <div class="product-overlay">
+                <button class="btn btn-light btn-sm" onclick="viewProduct('decoracion')">Ver Detalles</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h5>Elementos Decorativos</h5>
+              <p class="text-muted">Piezas únicas para decorar tu hogar</p>
+              <div class="price">Desde $50.000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobiliario Comercial -->
+        <div class="col-lg-4 col-md-6 col-sm-6 product-item" data-category="comercial">
+          <div class="product-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="product-image">
+              <img src="assets/ImagenesParaUsar/RPZ08206.jpg" alt="Comercial" class="img-fluid">
+              <div class="product-overlay">
+                <button class="btn btn-light btn-sm" onclick="viewProduct('comercial')">Ver Detalles</button>
+              </div>
+            </div>
+            <div class="product-info">
+              <h5>Mobiliario Comercial</h5>
+              <p class="text-muted">Soluciones para espacios de trabajo</p>
+              <div class="price">Cotización personalizada</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botón Cargar Más -->
+      <div class="text-center mt-5">
+        <button class="btn btn-custom btn-lg" id="loadMore">Cargar Más Productos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section py-5 bg-dark text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">¿No encuentras lo que buscas?</h2>
+      <p class="lead mb-4">Creamos piezas personalizadas según tus necesidades específicas</p>
+      <a href="index.html#contacto" class="btn btn-custom btn-lg">Solicitar Cotización Personalizada</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer bg-dark text-white py-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0">&copy; 2025 Agreste. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a href="index.html" class="text-white me-3">Volver al Inicio</a>
+          <a href="index.html#contacto" class="text-white">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const productItems = document.querySelectorAll('.product-item');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+        let visibleCount = 0;
+        
+        productItems.forEach((item, index) => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+            item.style.animation = `fadeInUp 0.5s ease-out ${index * 0.1}s both`;
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+        
+        // Clear search when filtering by category
+        searchInput.value = '';
+        showNoResultsMessage(false);
+        
+        // Smooth scroll to products on mobile
+        if (window.innerWidth <= 768) {
+            setTimeout(() => {
+                document.querySelector('.products').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+        }
+      });
+    });
+    
+    // Touch device optimizations
+    if ('ontouchstart' in window) {
+        // Add touch feedback for product cards
+        productItems.forEach(item => {
+            const card = item.querySelector('.product-card');
+            card.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            card.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Improve button touch feedback
+        filterButtons.forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.95)';
+            });
+            button.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    // Enhanced search functionality with mobile optimizations
+    const searchInput = document.getElementById('searchInput');
+    
+    function filterProducts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+        
+        productItems.forEach(item => {
+            const title = item.querySelector('h5').textContent.toLowerCase();
+            const description = item.querySelector('.text-muted').textContent.toLowerCase();
+            
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                item.style.display = 'block';
+                item.style.animation = 'fadeInUp 0.5s ease-out';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Show no results message if needed
+        showNoResultsMessage(visibleCount === 0 && searchTerm.length > 0);
+    }
+    
+    function showNoResultsMessage(show) {
+        let noResultsMsg = document.getElementById('noResultsMessage');
+        if (show && !noResultsMsg) {
+            noResultsMsg = document.createElement('div');
+            noResultsMsg.id = 'noResultsMessage';
+            noResultsMsg.className = 'col-12 text-center py-5';
+            noResultsMsg.innerHTML = `
+                <div class="text-muted">
+                    <i class="fas fa-search fa-3x mb-3"></i>
+                    <h4>No se encontraron productos</h4>
+                    <p>Intenta con otros términos de búsqueda</p>
+                </div>
+            `;
+            document.querySelector('.products .row').appendChild(noResultsMsg);
+        } else if (!show && noResultsMsg) {
+            noResultsMsg.remove();
+        }
+    }
+    
+    // Debounce search for better performance
+    let searchTimeout;
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(filterProducts, 300);
+    });
+
+    // View product function
+    function viewProduct(productId) {
+      alert('Funcionalidad de vista detallada en desarrollo. Producto: ' + productId);
+      // Aquí se puede implementar un modal o redirección a página de detalle
+    }
+
+    // Load more functionality
+    document.getElementById('loadMore').addEventListener('click', () => {
+      alert('Funcionalidad de cargar más productos en desarrollo');
+      // Aquí se implementaría la carga de más productos
+    });
+
+    // Navbar Scroll Effect
+    class NavbarScroll {
+      constructor() {
+        this.navbar = document.querySelector('.navbar');
+        this.init();
+      }
+
+      init() {
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 100) {
+            this.navbar.classList.add('navbar-scrolled');
+          } else {
+            this.navbar.classList.remove('navbar-scrolled');
+          }
+        });
+      }
+    }
+
+    // Initialize navbar scroll effect
+    new NavbarScroll();
+
+    // Enhanced CSS for animations
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes fadeInUp {
+        from { 
+          opacity: 0; 
+          transform: translateY(30px) scale(0.95); 
+        }
+        to { 
+          opacity: 1; 
+          transform: translateY(0) scale(1); 
+        }
+      }
+      
+      .product-card {
+        transition: transform 0.2s ease-out;
+      }
+      
+      .filter-buttons .btn {
+        transition: transform 0.1s ease-out;
+      }
+      
+      @media (max-width: 768px) {
+        .product-card:hover {
+          transform: none;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>

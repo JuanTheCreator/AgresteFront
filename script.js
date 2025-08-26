@@ -115,45 +115,39 @@ class ButtonEffects {
   }
 }
 
-// Premium Gallery Functions
-let premiumCurrentSlide = 0;
-const premiumSlides = [
-  'assets/Noviembre/NOVIEMBRE/RPZ09663.jpg',
-  'assets/Noviembre/NOVIEMBRE/RPZ09668.jpg',
-  'assets/Noviembre/NOVIEMBRE/RPZ09672.jpg',
-  'assets/Noviembre/NOVIEMBRE/RPZ09674.jpg'
-];
-
-function premiumGo(n) {
-  premiumCurrentSlide = n;
-  const mainImg = document.getElementById('premiumMainImg');
-  if (mainImg) {
-    mainImg.style.opacity = '0';
-    setTimeout(() => {
-      mainImg.src = premiumSlides[n];
-      mainImg.style.opacity = '1';
-    }, 200);
-  }
+// News Section Functions
+function initNewsSection() {
+  // Initialize video overlay functionality
+  const videoContainers = document.querySelectorAll('.news-video-container');
   
-  // Update active thumbnail
-  document.querySelectorAll('.premium-thumb').forEach((thumb, index) => {
-    thumb.style.opacity = index === n ? '1' : '0.6';
-    thumb.style.transform = index === n ? 'scale(1.1)' : 'scale(1)';
+  videoContainers.forEach(container => {
+    const video = container.querySelector('.news-video');
+    const overlay = container.querySelector('.video-overlay');
+    const playButton = container.querySelector('.play-button');
+    
+    if (playButton) {
+      playButton.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          overlay.style.opacity = '0';
+        } else {
+          video.pause();
+          overlay.style.opacity = '1';
+        }
+      });
+    }
+    
+    // Hide overlay when video is playing
+    video.addEventListener('play', () => {
+      overlay.style.opacity = '0';
+    });
+    
+    // Show overlay when video is paused
+    video.addEventListener('pause', () => {
+      overlay.style.opacity = '1';
+    });
   });
 }
-
-function premiumNext() {
-  premiumCurrentSlide = (premiumCurrentSlide + 1) % premiumSlides.length;
-  premiumGo(premiumCurrentSlide);
-}
-
-function premiumPrev() {
-  premiumCurrentSlide = (premiumCurrentSlide - 1 + premiumSlides.length) % premiumSlides.length;
-  premiumGo(premiumCurrentSlide);
-}
-
-// Auto-advance premium gallery
-setInterval(premiumNext, 5000);
 
 // Initialize all classes when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -174,8 +168,8 @@ document.addEventListener('DOMContentLoaded', function() {
   new ParallaxEffect();
   new ButtonEffects();
   
-  // Initialize premium gallery
-  premiumGo(0);
+  // Initialize news section
+  initNewsSection();
 });
 
 // Add ripple effect CSS
