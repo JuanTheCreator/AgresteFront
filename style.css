@@ -3397,5 +3397,19 @@ section {
   
   .news-card-image {
     height: 180px;
+ 
+  /* Mobile fixes for hero and CTA sections */
+@media (max-width: 767.98px) {
+  /* Override parallax backgrounds for smaller screens */
+  #inicio.hero,
+  .hero,
+  .cta,
+  .cta-section,
+  .hero-categories {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center top !important;
   }
+}
+}
 }
