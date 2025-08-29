@@ -62,44 +62,6 @@
     </div>
   </section>
 
-  <!-- SOBRE NOSOTROS -->
-  <section id="nosotros" class="about">
-    <div class="container py-5">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-          <img src="assets/ImagenesParaUsar/1 (6).jpg" alt="Carpintero trabajando" class="img-fluid rounded shadow-lg">
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <div class="section-title">
-            <h2>Sobre Agreste</h2>
-            <div class="title-line"></div>
-          </div>
-          <h3 class="mb-3">Creamos historias únicas en cada pieza</h3>
-          <p class="mb-4">En Agreste, creamos soluciones a medida. Nuestro equipo de artesanos expertos te acompaña desde la idea inicial hasta el resultado final, asegurando que cada pieza refleje tu visión y ajusta tus necesidades.</p>
-          <p class="elegant-italic mb-4">"Cada proyecto es una historia única que merece ser contada con la mejor madera"</p>
-          <div class="features">
-            <div class="feature-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Materiales de primera calidad</span>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Diseños personalizados</span>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Acabados perfectos</span>
-            </div>
-            <div class="feature-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Entrega puntual</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
   <!-- Categorías Destacadas -->
   <section id="categorias" class="categories">
     <div class="container">
@@ -171,6 +133,44 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros" class="about">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+          <img src="assets/ImagenesParaUsar/1 (6).jpg" alt="Carpintero trabajando" class="img-fluid rounded shadow-lg">
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="section-title">
+            <h2>Sobre Agreste</h2>
+            <div class="title-line"></div>
+          </div>
+          <h3 class="mb-3">Creamos historias únicas en cada pieza</h3>
+          <p class="mb-4">En Agreste, creamos soluciones a medida. Nuestro equipo de artesanos expertos te acompaña desde la idea inicial hasta el resultado final, asegurando que cada pieza refleje tu visión y ajusta tus necesidades.</p>
+          <p class="elegant-italic mb-4">"Cada proyecto es una historia única que merece ser contada con la mejor madera"</p>
+          <div class="features">
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Materiales de primera calidad</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Diseños personalizados</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Acabados perfectos</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Entrega puntual</span>
             </div>
           </div>
         </div>
@@ -907,8 +907,8 @@
     <div class="progress-bar-fill"></div>
   </div>
 
-  <!-- Page Reveal Overlay -->
-  <div id="pageReveal" class="page-reveal-overlay">
+  <!-- Page Reveal Overlay - Hidden on mobile -->
+  <div id="pageReveal" class="page-reveal-overlay" style="display: none;">
     <div class="reveal-content">
       <div class="reveal-logo">
         <img src="assets/AgresteTransparente.png" alt="Agreste" class="reveal-logo-img">
@@ -941,6 +941,15 @@
       }
       
       init() {
+        // Detectar móviles y ocultar overlay inmediatamente
+        if (window.innerWidth <= 768) {
+          console.log('Mobile detected, hiding overlay immediately');
+          this.overlay.style.display = 'none';
+          this.progressBar.classList.add('visible');
+          this.isRevealed = true;
+          return;
+        }
+        
         // Simular carga de contenido
         this.simulateLoading();
         
@@ -968,6 +977,7 @@
       }
       
       hideReveal() {
+        console.log('Hiding reveal overlay');
         this.overlay.classList.add('hidden');
         this.isRevealed = true;
         
@@ -980,6 +990,7 @@
         // Remover overlay del DOM después de la animación
         setTimeout(() => {
           this.overlay.style.display = 'none';
+          console.log('Overlay removed from DOM');
         }, 1600);
       }
       
@@ -1145,135 +1156,6 @@
         form.addEventListener('submit', function (event) {
           if (!form.checkValidity()) {
             event.preventDefault();
-            event.stopPropagation();
-          }
-          form.classList.add('was-validated');
-        }, false);
-      });
-    })();
-    
-    // Smooth scroll para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 70,
-            behavior: 'smooth'
-          });
-          
-          // Cerrar navbar en móvil
-          const navbarCollapse = document.querySelector('.navbar-collapse');
-          if (navbarCollapse.classList.contains('show')) {
-            navbarCollapse.classList.remove('show');
-          }
-        }
-      });
-    });
-    
-    // Botón volver arriba
-    const backToTopButton = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('active');
-      } else {
-        backToTopButton.classList.remove('active');
-      }
-    });
-
-    backToTopButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-  </script>
-
-  <!-- Modal de Proyecto -->
-<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="projectModalLabel">Título del Proyecto</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Carrusel de imágenes -->
-        <div id="projectCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/ImagenesParaUsar/RPZ08134.jpg" alt="Proyecto 1" class="d-block w-100 rounded" style="height: 400px; object-fit: cover;">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/ImagenesParaUsar/RPZ08172.jpg" alt="Proyecto 2" class="d-block w-100 rounded" style="height: 400px; object-fit: cover;">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/ImagenesParaUsar/RPZ08206.jpg" alt="Proyecto 3" class="d-block w-100 rounded" style="height: 400px; object-fit: cover;">
-            </div>
-            <div class="carousel-item">
-              <img src="assets/ImagenesParaUsar/RPZ08285.jpg" alt="Proyecto 4" class="d-block w-100 rounded" style="height: 400px; object-fit: cover;">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
-        </div>
-        <p id="projectModalDesc" class="elegant-italic mb-4">"Cada proyecto es una historia única que merece ser contada con la mejor madera"</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Datos de ejemplo para los proyectos destacados
-  const projectData = [
-    {
-      title: 'Mesa de Centro',
-      desc: '"Diseño minimalista con madera de roble que combina funcionalidad y elegancia"'
-    },
-    {
-      title: 'Estantería Modular',
-      desc: '"Solución personalizada para espacios reducidos con máximo aprovechamiento"'
-    },
-    {
-      title: 'Mobiliario Comercial',
-      desc: '"Diseño integral para espacios comerciales que refleja la identidad de tu marca"'
-    }
-  ];
-
-  const projectModal = document.getElementById('projectModal');
-  const projectModalLabel = document.getElementById('projectModalLabel');
-  const projectModalDesc = document.getElementById('projectModalDesc');
-
-  document.querySelectorAll('.btn-view').forEach((btn, idx) => {
-    btn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const data = projectData[idx] || projectData[0];
-      projectModalLabel.textContent = data.title;
-      projectModalDesc.textContent = data.desc;
-      const modal = new bootstrap.Modal(projectModal);
-      modal.show();
-    });
-  });
-
-
-});
-</script>
-
-</body>
-</html>
             event.stopPropagation();
           }
           form.classList.add('was-validated');
