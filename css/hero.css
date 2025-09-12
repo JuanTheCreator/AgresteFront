@@ -1,0 +1,246 @@
+/* ========================================
+   AGRESTE CARPINTERÍA - HERO SECTION STYLES
+   ======================================== */
+
+/* === INTERACTIVE HERO SECTION === */
+.interactive-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  max-height: 600px;
+  min-height: 400px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interactive-hero img, .hero-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.interactive-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* oscurece un poco */
+  z-index: 2;
+}
+
+.interactive-hero h1, .interactive-hero p {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    radial-gradient(circle at center, transparent 20%, rgba(0, 0, 0, 0.3) 80%);
+  z-index: 2;
+}
+
+.hero-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(139, 0, 0, 0.1) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(139, 0, 0, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+/* === HOTSPOTS === */
+.hotspot {
+  position: absolute;
+  z-index: 5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hotspot-marker {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid var(--primary-color);
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.hotspot-marker::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+/* === PRODUCT SLIDES === */
+.product-slide {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 15px;
+  min-width: 250px;
+  max-width: 300px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 10;
+}
+
+.hotspot:hover .product-slide {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+.product-info h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.product-info .price {
+  color: #2c5530;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.product-info .description {
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* === RESPONSIVE HOTSPOT POSITIONING === */
+@media (min-width: 1200px) {
+  .hotspot[data-product="lampara"] {
+    top: 25% !important;
+    left: 55% !important;
+  }
+  
+  .hotspot[data-product="estante"] {
+    top: 35% !important;
+    left: 70% !important;
+  }
+  
+  .product-slide {
+    min-width: 280px;
+    max-width: 320px;
+    padding: 18px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hotspot[data-product="lampara"] {
+    top: 25% !important;
+    left: 58% !important;
+  }
+  
+  .hotspot[data-product="estante"] {
+    top: 35% !important;
+    left: 72% !important;
+  }
+  
+  .product-slide {
+    min-width: 260px;
+    max-width: 300px;
+    padding: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hotspot[data-product="lampara"] {
+    top: 30% !important;
+    left: 60% !important;
+  }
+  
+  .hotspot[data-product="estante"] {
+    top: 40% !important;
+    left: 75% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .product-slide {
+    min-width: 240px;
+    max-width: 280px;
+    padding: 14px;
+    bottom: 25px;
+  }
+}
+
+/* === MOBILE RESPONSIVENESS === */
+@media (max-width: 768px) {
+  .product-slide {
+    min-width: 250px;
+    padding: 15px;
+  }
+  
+  .hotspot-marker {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .hotspot-marker::after {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Touch support for mobile */
+  .hotspot {
+    touch-action: manipulation;
+  }
+  
+  .hotspot:active .product-slide {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+  }
+}

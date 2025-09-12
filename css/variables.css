@@ -1,0 +1,48 @@
+/* ========================================
+   AGRESTE CARPINTERÍA - CSS VARIABLES
+   ======================================== */
+
+/* === CSS CUSTOM PROPERTIES (VARIABLES) === */
+:root {
+  /* Brand Colors */
+  --primary-color: #8B0000;        /* Main brand red */
+  --primary-light: #B71C1C;        /* Lighter brand red */
+  --primary-gradient: linear-gradient(135deg, #8B0000 0%, #B71C1C 100%);
+  --secondary-color: #1a1a1a;      /* Dark secondary */
+  --secondary-light: #2d2d2d;      /* Lighter secondary */
+  --accent-color: #FF6B35;         /* Orange accent */
+  
+  /* Text Colors */
+  --text-color: #ffffff;           /* Primary text (white) */
+  --text-dark: #1a1a1a;           /* Dark text */
+  --text-muted: #6b7280;          /* Muted/secondary text */
+  
+  /* Background Colors */
+  --bg-light: #fafafa;            /* Light background */
+  --bg-dark: #0f0f0f;             /* Dark background */
+  --bg-glass: rgba(255, 255, 255, 0.1);      /* Glass effect light */
+  --bg-glass-dark: rgba(0, 0, 0, 0.2);       /* Glass effect dark */
+  
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);    /* Subtle shadow */
+  --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);  /* Medium shadow */
+  --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.15); /* Strong shadow */
+  
+  /* Border Radius */
+  --border-radius: 16px;           /* Standard border radius */
+  --border-radius-lg: 24px;        /* Large border radius */
+  
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);      /* Standard transition */
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); /* Fast transition */
+  
+  /* Layout Variables */
+  --nav-h: 72px;                  /* Navbar height */
+}
+
+/* Responsive navbar height */
+@media (max-width: 991.98px) {
+  :root {
+    --nav-h: 76px;
+  }
+}
