@@ -28,3 +28,17 @@ yarn-error.log*
 # Archivos temporales
 *.tmp
 *.temp
+
+# Archivos multimedia grandes
+*.mp4
+*.avi
+*.mov
+*.ARW
+*.CR2
+*.NEF
+
+# Carpetas con archivos pesados
+assets/MiniVideos/
+assets/Agosto/
+assets/Noviembre/
+assets/Taller/
